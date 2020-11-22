@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>fasting-balance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ここにサイト説明を入れます">
+    <meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/fixmenu_pagetop.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+    $('a[href^="#"]').click(function() {
+    var speed = 800;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+    });
+    });
+    </script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1 id="logo"><a href="index.html"><img src="assets/logo.png" alt="SAMPLE COMPANY"></a></h1>
+      <nav id="menubar">
+      <ul>
+        <li><a href="#new">新規・ログイン</a></li>
+        <li><a href="#company">概要</a></li>
+        <li><a href="#service">測定・記録</a></li>
+        <li><a href="#contact">メモ</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <div id="container">
+
+      <div id="contents">
+
+        <section id="new">
+
+          <% if user_signed_in? %>
+             <h2>ログアウト</h2>
+          <% else %>
+            <h2>新規登録・ログイン</h2>
+          <% end %> 
+
+          <% if user_signed_in? %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to '新規登録', new_user_registration_path %>・<%= link_to 'ログイン', new_user_session_path %>
+          <% end %>
+
+        </section>
+        <!--/#new-->
+
+      <section id="company">
+
+        <h2>概要</h2>
+
+        <h3>FastingBalance概要</h3>
+        <table class="ta1">
+          <caption>FastingBalanceを使う上で大切なこと</caption>
+          <tr>
+          <th>FastingBalanceとは？</th>
+          <td>このアプリは、「プチ断食」を健康に取り入れるためのサポートアプリです。</td>
+          </tr>
+          <tr>
+          <th>プチ断食とは？</th>
+          <td>プチ断食は１日〜１週間何も食べない断食と違い、１日２４時間のうち６時間〜８時間の間は好きな量食べてもいいという断食です。
+          要は、１６〜１８時間の間何も食べない時間を作ることです！</td>
+          </tr>
+          <tr>
+          <th>おすすめの食事時間</th>
+          <td>ずばり、お昼過ぎから寝る３時間前！具体的にいうと、13時〜19時の間は食べ放題！</td>
+          </tr>
+          <tr>
+          <th>無理はしない</th>
+          <td>とは言っても最初はお腹が空いて、仕事や勉学に集中できない！という方がほとんどなので、そこで無理は禁物です。おすすめは、素焼きナッツやヨーグルトなどをよく噛んで食べましょう。個人的には素焼きナッツがいいと思います！</td>
+          </tr>
+          <tr>
+          <th>継続が大切</th>
+          <td>ここまで読んで、「あれ、これならできそう！」と思った方！そうなんです。すごく簡単に継続できちゃうんです！ただ気をつけて欲しいのが、継続しないと意味がないということです。このプチ断食に関する論文や書物でも同じことが書かれています。</td>
+          </tr>
+          <tr>
+          <th>プチ断食のデメリット</th>
+          <td>デメリットとして上げられるのは、脂肪とともに筋肉量も落ちてしまうこと。すなわち代謝が落ちやすくなるので、散歩なり軽い運動は取り入れましょう！</td>
+          </tr>
+          <tr>
+          <th>プチ断食のメリット</th>
+          <td>メリットに関しては、たくさんあり過ぎて書ききれないので、本やYouTubeなどを見てみてください！めんどくさいという方はリンク貼っときますので、こちらからよろしくお願いします！
+          </td>
+          </tr>
+        </table>
+
+        <%= link_to 'プチ断食のメリットはこちらから！', 'https://oceans.tokyo.jp/health/2020-1005-6/' %>
+
+      <section id="service">
+
+      <h2>Service</h2>
+
+      <div class="list">
+      <img src="images/sample1.jpg" alt="">
+      <h4>ここの見出しのサイズは、cssフォルダのstyle.cssの「.list h4」で変更できます。</h4>
+      <p>左の画像の幅もstyle.cssの「.list img」のwidthの数字で変更できます。</p>
+      </div>
+
+      <div class="list">
+      <img src="images/sample2.jpg" alt="">
+      <h4>見出しを入れます。</h4>
+      <p>説明を入れます。</p>
+      </div>
+
+      <div class="list">
+      <img src="images/sample3.jpg" alt="">
+      <h4>見出しを入れます。</h4>
+      <p>説明を入れます。</p>
+      </div>
+
+      <div class="list">
+      <img src="images/sample4.jpg" alt="">
+      <h4>見出しを入れます。</h4>
+      <p>説明を入れます。</p>
+      </div>
+
+      <div class="list">
+      <img src="images/sample5.jpg" alt="">
+      <h4>見出しを入れます。</h4>
+      <p>説明を入れます。</p>
+      </div>
+
+      </section>
+      <!--/#service-->
+
+      <section id="contact">
+
+      <h2>Contact</h2>
+      <p class="c">お問い合わせは以下までお願い致します。</p>
+      <p class="c"><span class="big1">03-0000-0000</span><br>
+      定休日：毎週土日<br>
+      営業時間AM9:00〜PM6:00</p>
+      <p class="c"><img src="images/sample1.jpg" alt="" width="300"></p>
+
+      </section>
+      <!--/#contact-->
+
+      </div>
+      <!--/#contents-->
+
+    </div>
+    <!--/#container-->
+
+    <footer>
+    <small>Copyright&copy; <a href="index.html">SAMPLE COMPANY</a> All Rights Reserved.</small>
+    <span class="pr">《<a href="https://template-party.com/" target="_blank">Web Design:Template-Party</a>》</span>
+    </footer>
+
+    <!--ページの上部に戻る「↑」ボタン-->
+    <p class="nav-fix-pos-pagetop"><a href="#">↑</a></p>
+
+  </body>
+</html>
