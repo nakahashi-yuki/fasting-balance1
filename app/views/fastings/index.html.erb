@@ -34,7 +34,11 @@
       <h1 id="logo"><a href="index.html"><img src="assets/logo.png" alt="SAMPLE COMPANY"></a></h1>
       <nav id="menubar">
       <ul>
-        <li><a href="#new">新規・ログイン</a></li>
+        <% if user_signed_in? %>
+          <li><a href="#new">ログアウト</a></li>
+        <% else %>
+          <li><a href="#new">新規 & ログイン</a></li>
+        <% end %>
         <li><a href="#company">概要</a></li>
         <li><a href="#service">測定・記録</a></li>
         <li><a href="#contact">メモ</a></li>

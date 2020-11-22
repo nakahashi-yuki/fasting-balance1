@@ -1,0 +1,9 @@
+.session {
+	height: 100vh;
+	color: black;
+	background: url(/assets/mainimg.jpg) no-repeat center center / cover;
+}
+
+.devise-link {
+  color: black;
+}
