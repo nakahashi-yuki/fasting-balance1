@@ -1,0 +1,30 @@
+.record-measurement {
+  display: flex;
+  justify-content: space-around;
+}
+
+.record {
+  height: 250px;
+  width: 450px;
+  overflow-y: scroll;
+}
+
+.log {
+  border: 1px solid #003300;
+}
+
+.log-date {
+  margin-left: 30px;
+}
+
+.log-content {
+  margin-left: 30px;
+}
+
+.weight {
+  color: #006600;
+}
+
+.fitness {
+  color: #006633;
+}

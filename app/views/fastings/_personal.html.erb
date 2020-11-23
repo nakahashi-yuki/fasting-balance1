@@ -1,0 +1,22 @@
+<div class="log">
+    
+  <div class="log-date">
+    <!-- 記録した時刻を出力する -->
+    <%= fasting.created_at.to_s(:datetime_jp) %>
+  </div>
+
+  <div class="log-content">
+
+    <!-- 記録内容を記述する -->
+    <span class='weight'>体重:</span><%= fasting.body_weight %>kg
+
+    <span class='fitness'>運動:</span><%= fasting.motion.name %>
+
+    <% if fasting.motion_id == 2 %>
+      0分
+    <% else %>
+      を<%= fasting.motion_time.name %>！
+    <% end %>
+  </div>
+
+</div>
