@@ -4,6 +4,7 @@
 }
 
 .record {
+  /* border: 1px solid #003300; */
   height: 250px;
   width: 450px;
   overflow-y: scroll;

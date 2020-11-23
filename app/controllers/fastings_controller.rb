@@ -2,6 +2,7 @@ class FastingsController < ApplicationController
 
   def index
     @fastings = Fasting.all
+    @personal = Fasting.last
     @fasting = Fasting.new
   end
 

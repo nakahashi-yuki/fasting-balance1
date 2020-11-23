@@ -12,9 +12,7 @@
 
     <span class='fitness'>運動:</span><%= fasting.motion.name %>
 
-    <% if fasting.motion_id == 2 %>
-      0分
-    <% else %>
+    <% unless fasting.motion_id == 2 %>
       を<%= fasting.motion_time.name %>！
     <% end %>
   </div>

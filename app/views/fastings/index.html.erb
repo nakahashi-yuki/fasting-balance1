@@ -32,17 +32,32 @@
 
     <header>
       <h1 id="logo"><a href="index.html"><img src="assets/logo.png" alt="SAMPLE COMPANY"></a></h1>
+      
       <nav id="menubar">
-      <ul>
-        <% if user_signed_in? %>
-          <li><a href="#new">ログアウト</a></li>
-        <% else %>
-          <li><a href="#new">新規 & ログイン</a></li>
-        <% end %>
-        <li><a href="#company">概要</a></li>
-        <li><a href="#service">測定・記録</a></li>
-        <li><a href="#contact">メモ</a></li>
-      </ul>
+        <div class='new-record'>
+            <span class='memory-title'>前回の記録</span>
+          <div class='memory'>
+            <div class='end-date'>
+              <%= @personal.created_at.to_s(:datetime_jp) %>
+            </div>
+            <span class='weight'>体重:</span><%= @personal.body_weight %>kg
+            <span class='fitness'>運動:</span><%= @personal.motion.name %>
+            <% unless @personal.motion_id == 2 %>
+              を<%= @personal.motion_time.name %>！
+            <% end %>
+          </div>
+        </div>
+
+        <ul>
+          <% if user_signed_in? %>
+            <li><a href="#new">ログアウト</a></li>
+          <% else %>
+            <li><a href="#new">新規 & ログイン</a></li>
+          <% end %>
+          <li><a href="#company">概要</a></li>
+          <li><a href="#service">測定・記録</a></li>
+          <li><a href="#contact">メモ</a></li>
+        </ul>
       </nav>
     </header>
 
