@@ -110,36 +110,42 @@
 
       <section id="service">
 
-      <h2>Service</h2>
+      <h2>測定・記録</h2>
 
-      <div class="list">
-      <img src="images/sample1.jpg" alt="">
-      <h4>ここの見出しのサイズは、cssフォルダのstyle.cssの「.list h4」で変更できます。</h4>
-      <p>左の画像の幅もstyle.cssの「.list img」のwidthの数字で変更できます。</p>
-      </div>
+      <div class='record-measurement'>
+        <div class='parent-measurement'>
+          <%= form_with model: @fasting, id: 'fasting', local: true do |f| %>
 
-      <div class="list">
-      <img src="images/sample2.jpg" alt="">
-      <h4>見出しを入れます。</h4>
-      <p>説明を入れます。</p>
-      </div>
+            <div class='measurement'>
+            
+              <div class='weight'>
+              体重
+              </div>
+              <%= f.text_field :body_weight, placeholder: "(kg)", id: 'weight' %>
 
-      <div class="list">
-      <img src="images/sample3.jpg" alt="">
-      <h4>見出しを入れます。</h4>
-      <p>説明を入れます。</p>
-      </div>
+              <div class='fitness'>
+              運動
+              </div>
+              <%= f.collection_select(:motion_id, Motion.all, :id, :name, {}, {id: 'motion'}) %>
 
-      <div class="list">
-      <img src="images/sample4.jpg" alt="">
-      <h4>見出しを入れます。</h4>
-      <p>説明を入れます。</p>
-      </div>
+              <div class='week_motion'>
+              時間
+              </div>
+              <%= f.collection_select(:motion_time_id, MotionTime.all, :id, :name, {}, {id: 'motion-time'}) %>
 
-      <div class="list">
-      <img src="images/sample5.jpg" alt="">
-      <h4>見出しを入れます。</h4>
-      <p>説明を入れます。</p>
+              <div>
+                <%= f.submit "記録", {class: 'botan', id: 'submit-botan'}%>
+              </div>
+            </div>
+
+          <% end %>
+        </div>
+
+        <div class='record'>
+          
+          <%= render partial: 'personal', collection: @fastings, as: "fasting" %>
+
+        </div>
       </div>
 
       </section>
@@ -148,11 +154,11 @@
       <section id="contact">
 
       <h2>Contact</h2>
-      <p class="c">お問い合わせは以下までお願い致します。</p>
+      <%# <p class="c">お問い合わせは以下までお願い致します。</p>
       <p class="c"><span class="big1">03-0000-0000</span><br>
       定休日：毎週土日<br>
       営業時間AM9:00〜PM6:00</p>
-      <p class="c"><img src="images/sample1.jpg" alt="" width="300"></p>
+      <p class="c"><img src="images/sample1.jpg" alt="" width="300"></p> %>
 
       </section>
       <!--/#contact-->

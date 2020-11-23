@@ -7,7 +7,17 @@
 
     <div class="field">
       <%= f.label :nickname %><br />
-      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", maxlength: 6 %>
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nicname", maxlength: 6 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :gender %><br />
+        <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {id: 'gender'}) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :target_body_weight %><br />
+      <%= f.number_field :target_body_weight, autofocus: true, autocomplete: "target_body_weight", placeholder: "kg" %>
     </div>
 
     <div class="field">
