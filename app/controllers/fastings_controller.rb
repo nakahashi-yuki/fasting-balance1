@@ -4,6 +4,8 @@ class FastingsController < ApplicationController
     @fastings = Fasting.all
     @personal = Fasting.last
     @fasting = Fasting.new
+    @memos = Memo.all
+    @memo = Memo.new
   end
 
   def create

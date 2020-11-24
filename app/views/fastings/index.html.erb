@@ -168,12 +168,15 @@
 
       <section id="contact">
 
-      <h2>Contact</h2>
-      <%# <p class="c">お問い合わせは以下までお願い致します。</p>
-      <p class="c"><span class="big1">03-0000-0000</span><br>
-      定休日：毎週土日<br>
-      営業時間AM9:00〜PM6:00</p>
-      <p class="c"><img src="images/sample1.jpg" alt="" width="300"></p> %>
+      <h2>メモ</h2>
+      
+      <%= form_with model: @memo, url: fastings_path, id: 'memo', local: true do |m| %>
+
+        <%= m.collection_select(:number_meals_id, NumberMeals.all, :id, :name, {}, {id: 'number-meals'}) %>
+
+        <%= m.text_area :memo, placeholder: "何をどれだけ食べた。", id: 'memo' %>
+
+      <% end %>
 
       </section>
       <!--/#contact-->
