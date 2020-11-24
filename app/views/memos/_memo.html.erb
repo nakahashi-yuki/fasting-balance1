@@ -1,0 +1,23 @@
+<h2>メモ</h2>
+
+<%= form_with model: memo, url: memos_path, class: 'memo-form', id: 'memo', local: true do |m| %>
+
+  <div class='number-meals'>
+    <div class='eat'>
+      食事回数
+    </div>
+    <%= m.collection_select(:number_meals_id, NumberMeals.all, :id, :name, {}, {class: 'eat-select', id: 'number-meals'}) %>
+  </div>
+  
+  <div class='memo'>
+    <div class='memos'>
+      メモ
+    </div>
+    <%= m.text_area :memo, placeholder: "何をどれだけ食べた。", class: 'memo-area', id: 'memo' %>
+  </div>
+
+  <div>
+    <%= m.submit "メモる", class: 'memo-botan' %>
+  </div>
+
+<% end %>

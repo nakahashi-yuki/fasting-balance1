@@ -2,7 +2,10 @@ class FastingsController < ApplicationController
 
   def index
     @fastings = Fasting.all
+    @personal = Fasting.last
     @fasting = Fasting.new
+    @memos = Memo.all
+    @memo = Memo.new
   end
 
   def create
@@ -19,4 +22,5 @@ class FastingsController < ApplicationController
   def fasting_params
     params.require(:fasting).permit(:body_weight, :motion_id, :motion_time_id)
   end
+
 end
