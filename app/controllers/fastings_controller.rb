@@ -22,4 +22,5 @@ class FastingsController < ApplicationController
   def fasting_params
     params.require(:fasting).permit(:body_weight, :motion_id, :motion_time_id)
   end
+
 end

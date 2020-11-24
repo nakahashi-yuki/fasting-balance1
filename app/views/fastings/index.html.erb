@@ -168,15 +168,7 @@
 
       <section id="contact">
 
-      <h2>メモ</h2>
-      
-      <%= form_with model: @memo, url: fastings_path, id: 'memo', local: true do |m| %>
-
-        <%= m.collection_select(:number_meals_id, NumberMeals.all, :id, :name, {}, {id: 'number-meals'}) %>
-
-        <%= m.text_area :memo, placeholder: "何をどれだけ食べた。", id: 'memo' %>
-
-      <% end %>
+      <%= render partial: 'memos/memo', locals: {memo: @memo}%>
 
       </section>
       <!--/#contact-->
