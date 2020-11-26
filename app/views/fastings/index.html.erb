@@ -168,7 +168,13 @@
 
       <section id="contact">
 
-      <%= render partial: 'memos/memo', locals: {memo: @memo}%>
+        <%= render partial: 'memos/memo', locals: {memo: @memo}%>
+
+        <div class='memo-display'>
+
+          <%= render  partial: 'memos/memo_recod', collection: @memos, as: "memos" %>
+
+        </div>
 
       </section>
       <!--/#contact-->

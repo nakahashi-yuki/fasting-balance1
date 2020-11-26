@@ -15,6 +15,22 @@
   width: 80%;
 }
 
+.memo-display {
+  height: 200px;
+  width: 100%;
+  overflow-y: scroll;
+  border: 2px double;
+}
+
+.memoreco {
+  margin: 10px 0 30px 100px ;
+}
+
+.memo-name {
+  font-size: large;
+  color: #67c5ff;
+}
+
 /* --------------------- submit CSS ------------------------------------------------- */
 
 .memo-form .memo-submit {
