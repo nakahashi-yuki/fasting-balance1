@@ -14,6 +14,18 @@
   border: 1px solid #003300;
 }
 
+.pulldown {
+  display: flex;
+}
+
+.delete {
+  text-decoration: none;
+  color: crimson;
+  border: 1px crimson solid;
+  margin-left: 120px;
+  padding: 0 5px;
+}
+
 .log-date {
   margin-left: 30px;
 }

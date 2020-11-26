@@ -1,8 +1,13 @@
 <div class="log">
+  <div class='pulldown'>
     
-  <div class="log-date">
-    <!-- 記録した時刻を出力する -->
-    <%= fasting.created_at.to_s(:datetime_jp) %>
+    <div class="log-date">
+      <!-- 記録した時刻を出力する -->
+      <%= fasting.created_at.to_s(:datetime_jp) %>
+    </div>
+
+    <%= link_to '削除', fasting_path(fasting), class: 'delete', method: :delete %>
+      
   </div>
 
   <div class="log-content">
