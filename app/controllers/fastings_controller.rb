@@ -17,6 +17,12 @@ class FastingsController < ApplicationController
     end
   end
 
+  def destroy
+    fasting = Fasting.find(params[:id])
+    fasting.destroy
+    redirect_to root_path
+  end
+
   private
 
   def fasting_params
