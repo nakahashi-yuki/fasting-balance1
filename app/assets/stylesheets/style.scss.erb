@@ -47,7 +47,8 @@ header {
 	height: 100%;
 	overflow: auto;
 	position: relative;
-	background: url(../assets/mainimg.jpg) no-repeat center center / cover;	/*背景画像の読み込み*/
+	background: url(<%= asset_path "mainimg.jpg" %>) no-repeat center center / cover;	/*背景画像の読み込み*/
+	/* (<%= asset_path "parts3.png" %>) */
 }
 /*ロゴ画像*/
 header #logo img {
