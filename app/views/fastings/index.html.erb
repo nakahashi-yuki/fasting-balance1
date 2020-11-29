@@ -35,17 +35,19 @@
       
       <nav id="menubar">
         <div class='new-record'>
+          <% if @personal %>
             <span class='memory-title'>前回の記録</span>
-          <div class='memory'>
-            <div class='end-date'>
-              <%= @personal.created_at.to_s(:datetime_jp) %>
+            <div class='memory'>
+              <div class='end-date'>
+                <%= @personal.created_at.to_s(:datetime_jp) %>
+              </div>
+              <span class='weight'>体重:</span><%= @personal.body_weight %>kg
+              <span class='fitness'>運動:</span><%= @personal.motion.name %>
+              <% unless @personal.motion_id == 2 %>
+                を<%= @personal.motion_time.name %>！
+              <% end %>
             </div>
-            <span class='weight'>体重:</span><%= @personal.body_weight %>kg
-            <span class='fitness'>運動:</span><%= @personal.motion.name %>
-            <% unless @personal.motion_id == 2 %>
-              を<%= @personal.motion_time.name %>！
-            <% end %>
-          </div>
+          <% end %>
         </div>
 
         <ul>
