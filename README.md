@@ -19,8 +19,7 @@ fastingを継続したいというニーズもあると考えたので、今回�
 
 # DEMO
 トップページ
-![Uploading スクリーンショット 2020-12-18 17.58.15.png…]()
-<!-- <img width="1440" alt="スクリーンショット 2020-11-26 20 01 44" src="https://user-images.githubusercontent.com/72498200/100343707-1472f980-3023-11eb-9c78-ae19730e55c2.png"> -->
+<img width="1440" alt="スクリーンショット 2020-11-26 20 01 44" src="https://i.gyazo.com/2172752c2e43551575b90ac4481127ff.jpg">
 
 
 新規登録画面
